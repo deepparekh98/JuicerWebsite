@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/team.css">
+    <title>Elixir Juicer</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,  initial-scale=1">
+	<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){//On ready of the document
+			$.getJSON("employees.json", function(data) {//read team.json file
+				$.each(data, function() {
+					$.each(this, function(key, value) {//iterating over each key and value
+						$(".desktop1").append(//appending data to table
+							"<tr>"+
+							"<td>"+ value.name + "</td>" +
+							"<td>" + value.title + "</td>" +
+							"<td>" + value.department + "</td>" +							
+							"<td>" + value.bio + "</td>" +
+							"</tr>"
+						);
+					});
+				}); 
+			});
+		});// end ready</script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="header">
+        <a href="index.html" class="logo">ELIXIR<sup style="font-size: 42%;">&#174;</sup></a>
+        <!--<div class="header-right">-->
+            <ul class="menu">
+			
+				<li><a href="index.html"><font color="#FFFFFF">Home</font></a></li>
+			<li><a href="about.html"><font color="#FFFFFF">About Us</font></a></li>
+            <li><a href="team.html"><font color="#FFFFFF">Team</font></a></li>
+			<li><a href="specials.html"><font color="#FFFFFF">Special</font></a></li>
+            <li><a href="training.html"><font color="#FFFFFF">Training</font></a></li>
+            <li><a href="media.html"><font color="#FFFFFF">Media</font></a></li>
+			<li><a href="contact.html"><font color="#FFFFFF">Contact Us</font></a></li>
+        </div>
+    </div>
+	<!--<li><div class="dropdown">
+				<button class="dropbtn" style="background-color:#3366CC;"><font color="#FFFFFF">Products</font> 
+				  <i class="fa fa-caret-down"></i>
+				</button>
+				<div class="dropdown-content">
+				  <a href="http://12.42.204.30:7116/WEB1.html">Products</a>
+				  <a href="http://12.42.204.30:7116/WEB2.html" target="_blank">Customer Orders</a>
+                  <a href="http://12.42.204.30:7116/WEB3.html" target="_blank">Orders Total</a>
+                  <a href="http://12.42.204.30:7116/WEB4.html" target="_blank">Product Inventory</a>
+				</div>
+			 </div></li>-->
+    <div class="index">
+        <a href="index.html">
+            <img src="./images/juicer-banner-13-3-2020.png">
+        </a>
+    </div>
+
+    <!-- Team Content -->
+    <div class="team-content">
+        <!-- WHO WE ARE -->
+        <div class="w-w-a">
+            <div>
+                <h2>WHO WE ARE</h2>
+            </div>
+        </div>
+
+        <div class="w-w-a-cont-head">
+            <p>A JUICER COMPANY THAT’S DIFFERENT FROM THE REST</p>
+        </div>
+
+        <div class="w-w-a-cont">
+            <div>
+                <p>Elixer Juicer is a Korea based Juicer company that specializes in manufacturing high-end Juicer
+                    Machines. We’re passionate about what we do, setting health goals for our customers and never
+                    resting until we’ve determined a strategy that achieves incredible results. We don’t stop until our
+                    customers get the results they came for, we use our years of expertise to get them there.</p>
+            </div>
+        </div>
+
+        <!-- OUR TEAM -->
+        <div class="o-t">
+            <div>
+                <h2>OUR TEAM</h2>
+            </div>
+        </div>
+
+          
+        <div class="row">
+            <div class="column">
+                <img src="images/DREW-1.png" height="359.984" width="359.984">
+                <h2>DREW KARGES</h2>
+                <p>FOUNDER AND MD</p>
+            </div>
+            <div class="column">
+                <img src="images/DOUG-1.png" height="359.984" width="359.984">
+                <h2>DOUG GORRIE</h2>
+                <p>Lead Engineer</p>
+            </div>
+            <div class="column">
+                <img src="images/Amy-D.png" height="359.984" width="359.984">
+                <h2>AMY DESCHAMPS</h2>
+                <p>Nutritionist</p>
+            </div>
+            <div class="column">
+                <img src="images/Emily.png" height="359.984" width="359.984">
+                <h2>EMILY RUDOW</h2>
+                <p>DESIGNER + CRO SPECIALIST</p>
+            </div>
+            <div class="column">
+                <img src="images/Amy-Z.png" height="359.984" width="359.984">
+                <h2>ERICA BING</h2>
+                <p>AMAZON ADS SPECIALIST</p>
+            </div>
+            <div class="column">
+                <img src="images/MICHAEL-1.png" height="359.984" width="359.984">
+                <h2>MICHAEL LUM</h2>
+                <p>DIRECTOR OF OPERATIONS</p>
+            </div>
+        </div>
+
+        <div class="o-t">
+            <div>
+                <h2>OUR VALUES</h2>
+            </div>
+        </div>
+        <div class="w-w-a-cont">
+            <div>
+                <p>At the core of everything we do is our values. We pride ourselves on working collaboratively with our
+                    customers to present them with out-of-the-box diet plans, while ensuring that juicer machines provided by us
+                    is perfect for their fitness goal.</p>
+            </div>
+        </div>
+        
+        <div class="o-t">
+            <div>
+                <h3>TRUST<br></h3>
+				<h3>SERVICE<br></h3>
+                <h3>INTEGRITY<br></h3>
+                <h3>ACCOUNTABILITY<br></h3>
+            </div>
+        </div>
+    </div>
+	
+    <!-- Footer -->
+    <footer>
+        &copy; Copyright 2009. All Rights Reserved.<br>
+        <a href="mailto:customercare@elixirjuicers.net">Request Information<br></a>
+        Deep Parekh &nbsp; &nbsp; c0812123
+    </footer>
+</body>
+
+</html>

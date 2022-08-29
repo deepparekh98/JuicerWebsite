@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Elixir Juicer</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,  initial-scale=1">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="header">
+        <a href="index.html" class="logo">ELIXIR<sup style="font-size: 42%;">&#174;</sup></a>
+        <!--<div class="header-right">-->
+            <ul class="menu">
+			
+				<li><a href="index.html"><font color="#FFFFFF">Home</font></a></li>
+			<li><a href="about.html"><font color="#FFFFFF">About Us</font></a></li>
+            <li><a href="team.html"><font color="#FFFFFF">Team</font></a></li>
+			<li><a href="specials.html"><font color="#FFFFFF">Special</font></a></li>
+            <li><a href="training.html"><font color="#FFFFFF">Training</font></a></li>
+            <li><a href="media.html"><font color="#FFFFFF">Media</font></a></li>
+			<li><a href="contact.html"><font color="#FFFFFF">Contact Us</font></a></li>
+        </div>
+    </div>
+	<!--<li><div class="dropdown">
+				<button class="dropbtn" style="background-color:#3366CC;"><font color="#FFFFFF">Products</font> 
+				  <i class="fa fa-caret-down"></i>
+				</button>
+				<div class="dropdown-content">
+				  <a href="http://12.42.204.30:7116/WEB1.html">Products</a>
+				  <a href="http://12.42.204.30:7116/WEB2.html" target="_blank">Customer Orders</a>
+                  <a href="http://12.42.204.30:7116/WEB3.html" target="_blank">Orders Total</a>
+                  <a href="http://12.42.204.30:7116/WEB4.html" target="_blank">Product Inventory</a>
+				</div>
+			 </div></li>-->
+    <div class="index">
+        <a href="index.html">
+            <img src="./images/juicer-banner-13-3-2020.png">
+        </a>
+    </div>
+
+    <!-- Contact Content-->
+    <div class="contact-content">
+        <div class="container">
+            <div class="title">Contact Us</div>
+            <form action="#">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">First Name</span>
+                        <input type="text" placeholder="Enter your first name" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Last Name</span>
+                        <input type="text" placeholder="Enter your last name" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Email</span>
+                        <input type="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Phone Number</span>
+                        <input type="text" placeholder="Enter your number" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Message</span>
+                        <textarea placeholder="Enter your message"></textarea>
+                    </div>
+                </div>
+
+                <div class="button">
+                    <input type="submit" value="Send"
+					onclick="validate(document.form1.fname,document.form1.lname,document.form1.email,document.form1.pnumber)">
+                </div>
+            </form>
+        </div>
+    </div>
+	<script>
+      function validate(fname, lname, email, pnumber)
+      {
+        var phoneno = /^\d{10}$/;
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        
+        if(fname.value != ""){
+        }
+        else{
+          alert("Not a valid First Name");
+          return false;
+        }
+        if(lname.value != ""){
+        }
+        else{
+          alert("Not a valid Last Name");
+          return false;
+        }
+        if(email.value.match(mailformat)){
+        }
+        else{
+          alert("Not a Email");
+          return false;
+        }
+
+        if(pnumber.value.match(phoneno)){
+          return true;
+        }
+        else{
+          alert("Not a valid Phone Number");
+          return false;
+        }
+      }
+    </script>
+    
+    <!-- Footer -->
+    <footer>
+        &copy; Copyright 2009. All Rights Reserved.<br>
+        <a href="mailto:customercare@elixirjuicers.net">Request Information<br></a>
+        Deep Parekh &nbsp; &nbsp; c0812123
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<link rel="stylesheet" href="css/style.css">
+<title>Elixir Juicer</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+	<script>
+	$(document).ready(function(){
+    	var searchTerm;
+    	$("#btnSearch").click(function() {
+			
+			// Set the search term
+			searchTerm = "";
+			if ($("#search").val() == "") { alert("You must enter one or more tags!"); }
+			else {
+				searchTerm = $("#search").val();
+				// Build the URL based on the search term
+				var url = "http://api.flickr.com/services/feeds/photos_public.gne?" +
+	    			  	  "format=json&jsoncallback=?&tags=" + searchTerm + "&tagmode=all";
+	
+				$.getJSON(url, function(data){
+					var html = "";
+					$.each(data.items, function(i, item){
+						html += "<h2>" + item.title + "</h2>";	
+						html += "<img src=" + item.media.m + ">";
+						html += "<p><b>Tags: </b>" + item.tags + "</p>";
+					});
+					$("#photos").html(html);
+				});
+			}
+        });
+    });
+    </script>
+</head>
+
+<body>
+<!-- Header -->
+<div class="header">
+<a href="index.html" class="logo">ELIXIR<sup style="font-size: 42%;">&#174;</sup></a>
+<!--<div class="header-right">-->
+            <ul class="menu">
+			
+				<li><a href="index.html"><font color="#FFFFFF">Home</font></a></li>
+			<li><a href="about.html"><font color="#FFFFFF">About Us</font></a></li>
+            <li><a href="team.html"><font color="#FFFFFF">Team</font></a></li>
+			<li><a href="specials.html"><font color="#FFFFFF">Special</font></a></li>
+            <li><a href="training.html"><font color="#FFFFFF">Training</font></a></li>
+            <li><a href="media.html"><font color="#FFFFFF">Media</font></a></li>
+			<li><a href="contact.html"><font color="#FFFFFF">Contact Us</font></a></li>
+        </div>
+    </div>
+	<!--<li><div class="dropdown">
+				<button class="dropbtn" style="background-color:#3366CC;"><font color="#FFFFFF">Products</font> 
+				  <i class="fa fa-caret-down"></i>
+				</button>
+				<div class="dropdown-content">
+				  <a href="http://12.42.204.30:7116/WEB1.html">Products</a>
+				  <a href="http://12.42.204.30:7116/WEB2.html" target="_blank">Customer Orders</a>
+                  <a href="http://12.42.204.30:7116/WEB3.html" target="_blank">Orders Total</a>
+                  <a href="http://12.42.204.30:7116/WEB4.html" target="_blank">Product Inventory</a>
+				</div>
+			 </div></li>--><div class="index">
+<a href="index.html">
+<img src="./images/juicer-banner-13-3-2020.png">
+</a>
+</div>
+
+<!-- Media Content -->
+<center>Search by tags: <input type="text" size="30" id="search">
+	  <input type="button" value="Search" id="btnSearch">
+	
+	   <h1><br>Flickr Results</h1>
+	   <div id="photos"></div>
+     
+     
+            <h3>Audio and Video, We Do It All.</h3>
+            <br><br></center>
+            <hr width="50%">
+     
+<div class="media-content">
+<audio controls>
+<source src="./tone/radha_krishna_flute.mp3" type="audio/mpeg">
+</audio><br/>
+
+<video width="320" height="240" controls>
+<source src="./video/HITMAN'S WIFE'S BODYGUARD Trailer (2021) Ryan Reynolds, Samuel L. Jackson, Hitman's Bodyguard 2.mp4" type="video/mp4">
+</video>
+</div>
+
+
+
+<!-- products section starts  -->
+
+        </div>
+
+    </div>
+
+
+</section>
+
+<!-- products section ends -->
+
+<!-- Footer -->
+<footer>
+&copy; Copyright 2009. All Rights Reserved.<br>
+<a href="mailto:customercare@elixirjuicers.net">Request Information<br></a>
+Deep Parekh &nbsp; &nbsp; c0812123
+</footer>
+
+
+
+
+<!-- custom js file link  -->
+
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+
+<script >
+        
+        var swiper = new Swiper(".product-slider", {
+    loop:true,
+    spaceBetween: 20,
+    autoplay: {
+        delay: 7500,
+        disableOnInteraction: false,
+    },
+    centeredSlides: true,
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      1020: {
+        slidesPerView: 3,
+      },
+    },
+});
+</script>
+
+</body>
+
+</html>
